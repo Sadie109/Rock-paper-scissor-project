@@ -6,16 +6,19 @@ gameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
 
 const choices = ["rock", "paper", "scissors", "spock", "lizard"];
 let userChoice;
+let computerChoice;
 
 const handleClick = (e) => {
   userChoice = e.target.id;
-  userChoiceDisplay.innerHTML = userChoice;
+  userChoiceDisplay.innerHTML = "User choice: " + userChoice;
   generateComputerChoice();
+  getResult();
 };
 
 const generateComputerChoice = () => {
   const randomChoice = choices[Math.floor(Math.random() * choices.length)];
-  computerChoiceDisplay.innerHTML = randomChoice;
+  computerChoice = randomChoice;
+  computerChoiceDisplay.innerHTML = "Computer choice: " + randomChoice;
 };
 
 for (let i = 0; i < choices.length; i++) {
@@ -25,3 +28,23 @@ for (let i = 0; i < choices.length; i++) {
   button.addEventListener("click", handleClick);
   gameGrid.appendChild(button);
 }
+
+const getResult = () => {
+  switch (userChoice + computerChoice) {
+    case "scissorspaper":
+    case "paperrock":
+    case "rockscissors":
+      resultDisplay.innerHTML = "YOU WIN!";
+      break;
+    case "paperscissors":
+    case "rockpaper":
+    case "scissorsrock":
+      resultDisplay.innerHTML = "YOU LOSE!";
+      break;
+    case "scissorsscissors":
+    case "paperpaper":
+    case "rockrock":
+      resultDisplay.innerHTML = "ITS A DRAW!";
+      break;
+  }
+};

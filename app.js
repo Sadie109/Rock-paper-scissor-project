@@ -5,9 +5,17 @@ const gameGrid = document.getElementById("game");
 gameGrid.append(userChoiceDisplay, computerChoiceDisplay, resultDisplay);
 
 const choices = ["rock", "paper", "scissors", "spock", "lizard"];
+let userChoice;
 
-const handleClick = () => {
-  console.log("clicked");
+const handleClick = (e) => {
+  userChoice = e.target.id;
+  userChoiceDisplay.innerHTML = userChoice;
+  generateComputerChoice();
+};
+
+const generateComputerChoice = () => {
+  const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+  computerChoiceDisplay.innerHTML = randomChoice;
 };
 
 for (let i = 0; i < choices.length; i++) {

@@ -24,7 +24,7 @@ header > h1 {
 }
 
 .score-board {
-    margin: 20px auto;
+    margin: 60px auto 40px auto;
     border: 3px solid #ffffff ;
     width: 200px;
     color: #ffffff;
@@ -67,4 +67,20 @@ header > h1 {
     text-align: center;
     font-weight: bold;
     font-family: spectral;
+}
+
+.choices {
+    margin: 50px 0;
+    text-align: center;
+}
+
+
+.choice {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.img {
+    height: 78px;
+    width: 78px;
 }

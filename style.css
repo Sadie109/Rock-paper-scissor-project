@@ -91,6 +91,14 @@ header > h1 {
 }
 
 
+#action-message {
+    text-align: center;
+    color: #ffffff;
+    font-family: spectral;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .img {
     height: 80px;
     width: 80px;

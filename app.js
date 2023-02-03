@@ -10,12 +10,23 @@ const scissors_div = document.getElementById("scissors");
 const spock_div = document.getElementById("spock");
 const lizard_div = document.getElementById("lizard");
 
-function game(userChoice) {
-    console.log("poop" + userChoice);
+function getComputerChoice() {
+    const choices = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+    const randomNumber = Math.floor(Math.random() * 5);
+    return choices[randomNumber];
 }
 
+
+
+function game(userChoice) {
+const computerChoice = getComputerChoice();
+console.log("userChoice =>" + userChoice );
+console.log("computerChoice =>" + computerChoice);
+}
+
+
 function main() {
-    
+
 rock_div.addEventListener('click', function() {
    game("rock");
 })

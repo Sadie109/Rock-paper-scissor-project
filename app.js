@@ -11,7 +11,7 @@ const spock_div = document.getElementById("Spock");
 const lizard_div = document.getElementById("Lizard");
 
 function getComputerChoice() {
-  const choices = ["Rock", "Paper", "Scissor", "Spock", "Lizard"];
+  const choices = ["Rock", "Paper", "Scissors", "Spock", "Lizard"];
   const randomNumber = Math.floor(Math.random() * 5);
   return choices[randomNumber];
 }
@@ -35,44 +35,43 @@ function lose(userChoice, computerChoice) {
 }
 
 function draw(userChoice, computerChoice) {
-  userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   const smallUserWord = "User".fontsize(3).sup();
   const smallCompWord = "Comp".fontsize(3).sup();
-  result_p.innerHTML = ` ${userChoice}${smallUserWord}  beats ${computerChoice}${smallCompWord}. You Win!`;
+  result_p.innerHTML = ` ${userChoice}${smallUserWord} equals ${computerChoice}${smallCompWord}. You draw!`;
 }
 
 function game(userChoice) {
   const computerChoice = getComputerChoice();
   switch (userChoice + computerChoice) {
     case "PaperRock":
-    case "ScissorPaper":
-    case "RockScissor":
-    case "SpockScissor":
+    case "ScissorsPaper":
+    case "RockScissors":
+    case "SpockScissors":
     case "LizardSpock":
     case "RockLizard":
     case "LizardPaper":
     case "SpockRock":
-    case "ScissorLizard":
+    case "ScissorsLizard":
     case "PaperSpock":
       win(userChoice, computerChoice);
       break;
     case "RockPaper":
-    case "PaperScissor":
-    case "ScissorRock":
-    case "ScissorSpock":
+    case "PaperScissors":
+    case "ScissorsRock":
+    case "ScissorsSpock":
     case "SpockLizard":
     case "LizardRock":
     case "PaperLizard":
     case "RockSpock":
-    case "LizardScissor":
+    case "LizardScissors":
     case "SpockPaper":
       lose(userChoice, computerChoice);
       break;
     case "RockRock":
     case "PaperPaper":
-    case "ScissorScissor":
+    case "ScissorsScissors":
     case "SpockSpock":
     case "LizardLizard":
       draw(userChoice, computerChoice);

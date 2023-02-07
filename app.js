@@ -1,5 +1,5 @@
 let userScore = 0;
-const computerScore = 0;
+let computerScore = 0;
 const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("comp-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -20,13 +20,27 @@ function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = userChoice + " beats " + computerChoice + ". You Win!";
+  const smallUserWord = "User".fontsize(3).sup();
+  const smallCompWord = "Comp".fontsize(3).sup();
+  result_p.innerHTML = ` ${userChoice}${smallUserWord}  beats ${computerChoice}${smallCompWord}. You Win!`;
 }
 
-function lose() {}
+function lose(userChoice, computerChoice) {
+  computerScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  const smallUserWord = "User".fontsize(3).sup();
+  const smallCompWord = "Comp".fontsize(3).sup();
+  result_p.innerHTML = ` ${userChoice}${smallUserWord}  loses to ${computerChoice}${smallCompWord}. You lost!`;
+}
 
-function draw() {
-  console.log("draw!");
+function draw(userChoice, computerChoice) {
+  userScore++;
+  userScore_span.innerHTML = userScore;
+  computerScore_span.innerHTML = computerScore;
+  const smallUserWord = "User".fontsize(3).sup();
+  const smallCompWord = "Comp".fontsize(3).sup();
+  result_p.innerHTML = ` ${userChoice}${smallUserWord}  beats ${computerChoice}${smallCompWord}. You Win!`;
 }
 
 function game(userChoice) {
